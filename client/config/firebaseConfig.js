@@ -1,19 +1,19 @@
-
 import { initializeApp, getApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
-// Your web app's Firebase configuration
+// Firebase configuration using .env variables
 const firebaseConfig = {
-  apiKey: "AIzaSyAhV10bMi2UWVVP7xNXCbUJgyJ1JEvLaDo",
-  authDomain: "spiritx-67078.firebaseapp.com",
-  projectId: "spiritx-67078",
-  storageBucket: "spiritx-67078.firebasestorage.app",
-  messagingSenderId: "752724932127",
-  appId: "1:752724932127:web:880d20897e3b6dbe31872a",
-  measurementId: "G-1TSTGLY92V"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
 
 // Initialize Firebase
 let app;
@@ -31,3 +31,4 @@ const firestoreDB = getFirestore(app);
 const firebaseStorage = getStorage(app);
 
 export { app, firebaseAuth, firestoreDB, firebaseStorage,firebaseConfig,signInWithEmailAndPassword };
+

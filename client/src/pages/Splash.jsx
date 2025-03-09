@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import { firebaseAuth, firestoreDB } from '../config/firebase'; // Import Firebase config
+import { useNavigate, Link } from 'react-router-dom'; // Changed to React Router DOM
+import { firebaseAuth, firestoreDB } from '../config/firebaseConfig'; // Import Firebase config
 import { doc, getDoc } from 'firebase/firestore';
 import { useDispatch } from 'react-redux';
-import { SET_USER } from '../context/actions/userActions'; // Assuming you have a Redux store setup
+import { SET_USER } from '../../src/context/actions/userAction';
 
 const Splash = () => {
-  const router = useRouter();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
@@ -23,18 +23,18 @@ const Splash = () => {
           }).then(() => {
             setTimeout(() => {
               console.log("here 1")
-              router.replace('/grouppages'); // Redirect to home after a delay
+            navigate('/dashboard'); // Redirect to home after a delay
             }, 1000); // 1 second delay
           });
         } else {
           console.log("here 2")
-          router.replace('/login'); // Redirect to login if user is not logged in
+          navigate('/login'); // Redirect to login if user is not logged in
         }
       });
     };
 
     checkLoggedUser(); // Call the function to check logged-in status
-  }, [dispatch, router]);
+  }, [dispatch, navigate]);
 
   // Display loading spinner while checking user authentication
   if (loading) {
@@ -51,4 +51,4 @@ const Splash = () => {
   return null; // No need to return anything after the navigation
 };
 
-export default Splash;
+export {Splash};
