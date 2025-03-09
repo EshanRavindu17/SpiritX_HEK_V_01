@@ -8,8 +8,8 @@ SecureConnect, a secure and user-friendly authentication system! In a world wher
 
 ## ✨Features
 
-- **Secure sign-up**: Assemble your perfect lineup by selecting from real university cricket players.
-- **Secure login**: Analyze in-depth stats to make informed decisions and optimize your team.
+- **Secure sign-up**: If you don't have any account sign-up
+- **Secure login**: secure login page
 - **Verify email**: when sign-up user have to be verify a email
 
 ---
@@ -48,12 +48,13 @@ Before you begin, ensure you have the following installed:
 
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-### Install Dependencies
 
 Clone the repository and install the required dependencies:
+![Screenshot 2025-03-09 194714](https://github.com/user-attachments/assets/8730a2c9-a0e0-4bdc-bf16-be4afad561a2)
+![Screenshot 2025-03-09 194737](https://github.com/user-attachments/assets/9d1d8fab-7594-4f19-acf3-031cbdbad18b)
 
 ```bash
 
-git clone https://github.com/EshanRavindu17/SpiritX_HEK_V_02.git
+git clone https://github.com/EshanRavindu17/SpiritX_HEK_V_01.git
 cd client
 npm install
